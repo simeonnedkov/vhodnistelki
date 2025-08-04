@@ -940,9 +940,10 @@ body {
 .spec-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline; /* Променено от flex-start на baseline */
   padding: 0.5rem 0;
   border-bottom: 1px solid #e9ecef;
+  /* Премахнато: flex-wrap: wrap; */
 }
 
 .spec-row:last-child {
@@ -953,12 +954,15 @@ body {
   font-weight: 500;
   color: #666;
   font-size: 0.9rem;
+  flex-shrink: 0; /* Added to prevent shrinking */
 }
 
 .spec-value {
   font-weight: 600;
   color: #333;
   font-size: 0.9rem;
+  flex-grow: 1; /* Added to take available space */
+  text-align: right; /* Added to align content to the right */
 }
 
 .service-description-clean {
